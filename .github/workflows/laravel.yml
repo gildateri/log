@@ -25,6 +25,8 @@ jobs:
         # 10.*：laravel版本
         # 文档 https://learnku.com/docs/laravel/10.x/releasesmd/14832
 
+    - name: ls
+      run: ls -la ./
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
