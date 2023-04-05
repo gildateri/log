@@ -13,8 +13,18 @@ jobs:
     steps:
     - uses: shivammathur/setup-php@v2
       with:
-        php-version: '8.0'
+        php-version: '8.1'
     - uses: actions/checkout@v3
+    - name: install laravel provec
+      run: |
+        composer create-project  laravel/laravel blog "10.*"
+        # composer create-project --prefer-dist laravel/laravel blog "10.*"
+        # laravel/laravel：包名，表示创建一个laravel项目
+        # blog：项目目录
+        # --prefer-dist：使用压缩版
+        # 10.*：laravel版本
+        # 文档 https://learnku.com/docs/laravel/10.x/releasesmd/14832
+
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
@@ -32,3 +42,10 @@ jobs:
         DB_CONNECTION: sqlite
         DB_DATABASE: database/database.sqlite
       run: vendor/bin/phpunit
+    - name: version
+      run: |
+        php artisan --version
+        php --version
+    - name: view file
+      run: |
+        cat .env
