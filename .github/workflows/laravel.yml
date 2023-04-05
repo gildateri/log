@@ -70,3 +70,23 @@ jobs:
     - name: view file
       run: |
         cat .env
+    - name: update file
+      run: |
+        date_y=`date "+%Y-%m-%d %H:%M:%S"`
+        month_y=`date "+%m"`
+        if [ "${month_y}" == "12" ]; then
+          echo "${date_y}" > monthly.log
+        else
+          echo "${date_y}" >> monthly.log
+        fi
+    - name: push
+      run: |
+        git config --local user.name github-actions[bot]
+        git config --local user.email github-actions[bot]@users.noreply.github.com
+        git status
+        # git add monthly.log
+        git add ./
+        # git commit -m "Monthly update"
+        git commit -m "init laravel 10"
+        git log
+        git push origin
