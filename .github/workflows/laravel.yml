@@ -43,6 +43,8 @@ jobs:
         # -rw-r--r--  1 runner docker 1069 Mar  8 16:57 .env.example
         # -rw-r--r--  1 runner docker  186 Mar  8 16:57 .gitattributes
         # -rw-r--r--  1 runner docker  243 Mar  8 16:57 .gitignore
+        ls -la ./blog
+        ls -la ./
         cat .gitignore
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
