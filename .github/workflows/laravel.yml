@@ -27,6 +27,8 @@ jobs:
 
     - name: ls
       run: ls -la ./
+    - name: ls_blog
+      run: ls -la ./blog
     - name: Copy .env
       run: php -r "file_exists('.env') || copy('.env.example', '.env');"
     - name: Install Dependencies
