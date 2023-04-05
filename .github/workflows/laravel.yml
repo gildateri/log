@@ -87,6 +87,6 @@ jobs:
         # git add monthly.log
         git add ./
         # git commit -m "Monthly update"
-        git commit -m "init laravel 10"
+        git commit -m "init laravel 10.6.1"
         git log
         git push origin
