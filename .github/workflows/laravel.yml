@@ -35,7 +35,9 @@ jobs:
         echo ""
         ls -la /usr/local/share/ca-certificates
         ls -la /etc/ssl/certs/ca-certificates.crt
-        ls -la /etc/pki/tls/certs/ca-bundle.crt
+        find / -name "crt" > crt.log
+        cat crt.log
+        # ls -la /etc/pki/tls/certs/ca-bundle.crt
         # ls -la ./blog
         # mv ./blog/*  ./
         # ls -la ./blog
